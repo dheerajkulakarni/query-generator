@@ -1,0 +1,22 @@
+# ──────────────────────────────────────────────
+# Query Generator Configuration
+# ──────────────────────────────────────────────
+# Override any value via environment variables.
+# See .env.example for available env var names.
+
+llm:
+  provider: gemini            # gemini | openai | ollama (any OpenAI-compatible API)
+  model: gemini-2.5-flash
+  temperature: 0.1
+  # api_key: ...              # set via LLM_API_KEY env var
+  # base_url: ...             # auto-resolved from provider, or set custom endpoint
+
+vectordb:
+  provider: chroma            # chroma (extensible)
+  persist_directory: ./chroma_data
+  collection_name: schemas
+
+app:
+  host: "0.0.0.0"
+  port: 7860
+  share: false                # set true to create a public Gradio link
